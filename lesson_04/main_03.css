@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.pager {
+	background: #eee;
+	display: inline-block;
+	padding: 10px;
+}
+.pagerItem, .pagerDots {
+	font-family: sans-serif;
+	font-size: 12px;
+	color: rgb(166, 77, 255);
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.onLeft {
+	margin-right: 5px;
+}
+.onLeft:first-of-type {
+	margin-right: 20px;
+}
+.onLeft:before {
+	content: "\00ab";
+	font-size: 16px;
+	margin-right: 3px;
+}
+.onRight {
+	margin-left: 5px;
+}
+.onRight:last-of-type {
+	margin-left: 20px;
+}
+.onRight:after {
+	content: "\00bb";
+	font-size: 16px;
+	margin-left: 3px;
+}
+.onPage {
+	border: 1px solid #aaa;
+	padding: 0.25em 0.5em;
+	border-radius: 3px;
+}
+.onLeft:hover, .onRight:hover {
+	color: rgb(83, 38, 128);
+}
+.onPage:hover {
+	background: rgb(166, 77, 255);
+	color: #fff;
+	border: 1px solid rgb(166, 77, 255);
+}
+.pagerDots:after {
+	content: "...";
+	margin: 0 5px;
+	vertical-align: sub;
+	font-weight: bold;
+}

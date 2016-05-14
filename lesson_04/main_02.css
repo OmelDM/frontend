@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: table;
+	width: 100%;
+}
+.navigationWrapper {
+	background: rgb(166, 77, 255);
+}
+.topNavigation {
+	width: 900px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.navigation {
+	font-family: Economica;
+	font-weight: bold;
+	font-size: 24px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 10px 15px;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.navigation:hover {
+	background: #eee;
+	color: #aaa;
+}

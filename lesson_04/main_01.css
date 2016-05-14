@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: table;
+	width: 100%;
+}
+.navigationWrapper {
+	background: rgb(166, 77, 255);
+}
+.topNavigation {
+	width: 900px;
+	margin: 0 auto;
+}
+.navigation {
+	font-family: Economica;
+	font-weight: bold;
+	font-size: 24px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px 15px;
+}
+.navigation:hover {
+	background: #eee;
+	color: #aaa;
+}
