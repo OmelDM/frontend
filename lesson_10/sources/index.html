@@ -16,56 +16,102 @@
 	</h6>
 	<div class="foto-container">
 		<div class="foto-container__item">
-			<img class="foto-container__img" src="i/img_01.png" alt="">
+			<img class="foto-container__img" src="i/img_01.jpg" alt="">
 			<div class="foto-container__hover-content">
 				<div class="foto-container__links">
-					<a class="foto-container__link" href="#search"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+					<a class="foto-container__link preview-button" data-preview="i/img_01.jpg" nclick="onOpenPreview('i/img_01.jpg')"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
 					<a class="foto-container__link" href="#link"><i class="fa fa-link" aria-hidden="true"></i></i></a>
 				</div>
 			</div>
 		</div><div class="foto-container__item">
-			<img class="foto-container__img" src="i/img_02.png" alt="">
+			<img class="foto-container__img" src="i/img_02.jpg" alt="">
 			<div class="foto-container__hover-content">
 				<div class="foto-container__links">
-					<a class="foto-container__link" href="#search"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+					<a class="foto-container__link preview-button" data-preview="i/img_02.jpg"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
 					<a class="foto-container__link" href="#link"><i class="fa fa-link" aria-hidden="true"></i></i></a>
 				</div>
 			</div>
 		</div><div class="foto-container__item">
-			<img class="foto-container__img" src="i/img_03.png" alt="">
+			<img class="foto-container__img" src="i/img_03.jpg" alt="">
 			<div class="foto-container__hover-content">
 				<div class="foto-container__links">
-					<a class="foto-container__link" href="#search"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+					<a class="foto-container__link preview-button" data-preview="i/img_03.jpg"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
 					<a class="foto-container__link" href="#link"><i class="fa fa-link" aria-hidden="true"></i></i></a>
 				</div>
 			</div>
 		</div><div class="foto-container__item">
-			<img class="foto-container__img" src="i/img_04.png" alt="">
+			<img class="foto-container__img" src="i/img_04.jpg" alt="">
 			<div class="foto-container__hover-content">
 				<div class="foto-container__links">
-					<a class="foto-container__link" href="#search"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+					<a class="foto-container__link preview-button" data-preview="i/img_04.jpg"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
 					<a class="foto-container__link" href="#link"><i class="fa fa-link" aria-hidden="true"></i></i></a>
 				</div>
 			</div>
 		</div><div class="foto-container__item">
-			<img class="foto-container__img" src="i/img_05.png" alt="">
+			<img class="foto-container__img" src="i/img_05.jpg" alt="">
 			<div class="foto-container__hover-content">
 				<div class="foto-container__links">
-					<a class="foto-container__link" href="#search"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+					<a class="foto-container__link preview-button" data-preview="i/img_05.jpg"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
 					<a class="foto-container__link" href="#link"><i class="fa fa-link" aria-hidden="true"></i></i></a>
 				</div>
 			</div>
 		</div><div class="foto-container__item">
-			<img class="foto-container__img" src="i/img_06.png" alt="">
+			<img class="foto-container__img" src="i/img_06.jpg" alt="">
 			<div class="foto-container__hover-content">
 				<div class="foto-container__links">
-					<a class="foto-container__link" href="#search"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+					<a class="foto-container__link preview-button" data-preview="i/img_06.jpg"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
 					<a class="foto-container__link" href="#link"><i class="fa fa-link" aria-hidden="true"></i></i></a>
 				</div>
 			</div>
 		</div>
+		<div class="foto-container__preview" id="foto-preview">
+			<img class="foto-container__preview-img" alt="">
+			<div class="preview__close">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</div>
+		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	"use strict";
+
+	var previewButtons = document.getElementsByClassName('preview-button');
+	Array.from(previewButtons).forEach(function (button) {
+		button.addEventListener('click', onOpenPreview);
+	});
+
+	var closeButtons = document.getElementsByClassName('preview__close');
+	Array.from(closeButtons).forEach(function (button) {
+		button.addEventListener('click', onClosePreview);
+	});
+
+	function onOpenPreview () {
+		"use strict";
+
+		var previewContainer = document.getElementById('foto-preview');
+
+		if (previewContainer) {
+			previewContainer.classList.add('foto-container__preview_opened');
+
+			var previewImg = previewContainer.getElementsByClassName('foto-container__preview-img')[0];
+			if (previewImg) {
+				previewImg.src = this.dataset.preview;
+			}
+		}
+	}
+
+	function onClosePreview () {
+		"use strict";
+
+		var previewContainer = document.getElementById('foto-preview');
+
+		if (previewContainer) {
+			previewContainer.classList.remove('foto-container__preview_opened');
+		}
+	}
+
+</script>
 
 </body>
 </html>
