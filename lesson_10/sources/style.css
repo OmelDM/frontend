@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+
+* {
+	margin: 0;
+	padding: 0;
+}
+.fotos {
+	background: #f6f9f9;
+	text-align: center;
+	padding: 60px 0;
+}
+.fotos__title {
+	font-size: 41px;
+	font-family: "Lato", sans-serif;
+	color: #2d3950;
+	margin: 0 0 22px 0;
+}
+.fotos__subtitle {
+	font-size: 15px;
+	font-family: "Lato", sans-serif;
+	color: #909090;
+	margin: 0 0 80px 0;
+}
+.foto-container {
+	display: inline-block;
+	max-width: 1152px;
+}
+.foto-container__item {
+	display: inline-block;
+	width: 360px;
+	margin: 15px 12px;
+	position: relative;
+}
+.foto-container__item:hover .foto-container__hover-content {
+	display: block;
+}
+.foto-container__hover-content {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #39aef7;
+	opacity: .9;
+}
+.foto-container__links {
+	margin: 123px 0;
+}
+.foto-container__link {
+	font-size: 15px;
+	color: #fff;
+	padding: 11px 12px 10px;
+	margin: 0 5px;
+	border: 1px solid #fff;
+	border-radius: 2px;
+}
+.foto-container__link:hover {
+	background: #25A6F7;
+}
+.foto-container__img {
+	width: 360px;
+	height: 260px;
+}
