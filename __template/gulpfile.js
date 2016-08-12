@@ -5,7 +5,8 @@ var gulp = require('gulp'),
 
 var BUILD_DIR = './build/'
 	, HTML_PATH = "./sources/*.html"
-	, CSS_PATH = './sources/*.css';
+	, CSS_PATH = './sources/*.css'
+	, IMG_DIR = './sources/i/*';
 
 gulp.task('connect', function() {
 	connect.server({
@@ -26,8 +27,14 @@ gulp.task('css', function() {
 		.pipe(connect.reload());
 });
 
-gulp.task('watch', function() {
-	gulp.watch([HTML_PATH, CSS_PATH], ['html', 'css']);
+gulp.task('img', function() {
+	return gulp.src(IMG_DIR)
+		.pipe(gulp.dest(BUILD_DIR + 'i/'))
+		.pipe(connect.reload());
 });
 
-gulp.task('default', ['html', 'css', 'connect', 'watch']);
+gulp.task('watch', function() {
+	gulp.watch([HTML_PATH, CSS_PATH, IMG_DIR], ['html', 'css', 'img']);
+});
+
+gulp.task('default', ['html', 'css', 'img', 'connect', 'watch']);
