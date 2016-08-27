@@ -1,0 +1,23 @@
+$full-width: 1480px;
+$content-width: 1170px;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+.content {
+	width: $content-width;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+
+	&_full {
+		width: $full-width;
+	}
+}
+body {
+	background: #333;
+}
