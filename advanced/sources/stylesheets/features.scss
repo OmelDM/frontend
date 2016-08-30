@@ -1,0 +1,59 @@
+@import 'variables';
+
+.features {
+	background: $light-gray-color;
+	color: $gray-color;
+	border-bottom: 1px solid #e7e7e7;
+	margin-top: 4px;
+}
+.feature {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 225px;
+	margin: 75px 45px 95px;
+
+	&:first-of-type {
+		margin-left: 0;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	&__icon {
+		display: inline-block;
+		background: $blue-main-color;
+		border-radius: 50%;
+		width: 162px;
+		height: 162px;
+		line-height: 162px;
+		border: 4px solid #efefef;
+		margin-bottom: 34px;
+
+		&:hover {
+			background: $dark-gray-color;
+		}
+	}
+
+	&__img {
+		vertical-align: middle;
+	}
+
+	&__title, &__description {
+		color: $dark-gray-color;
+		font-family: $lato-font;
+		font-weight: 700;
+		font-size: 15px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&__description {
+		color: $gray-color;
+		font-weight: 400;
+		font-size: 13px;
+		text-transform: none;
+		margin-top: 30px;
+	}
+}

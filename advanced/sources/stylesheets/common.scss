@@ -1,5 +1,4 @@
-$full-width: 1480px;
-$content-width: 1170px;
+@import 'variables';
 
 * {
 	margin: 0;
@@ -16,6 +15,22 @@ a {
 
 	&_full {
 		width: $full-width;
+	}
+
+	&__title, &__description  {
+		color: $dark-gray-color;
+		font-family: $lato-font;
+		font-weight: 900;
+		font-size: 36px;
+		text-transform: lowercase;
+		text-align: center;
+		padding-top: 60px;
+	}
+
+	&__description {
+		font-weight: 300;
+		font-size: 20px;
+		padding-top: 0;
 	}
 }
 body {
