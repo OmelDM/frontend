@@ -1,0 +1,72 @@
+@import 'variables';
+
+.gallery {
+	background: #fff;
+	color: $gray-color;
+}
+.foto {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 270px;
+	margin: 62px 15px 111px;
+
+	&:first-of-type {
+		margin-left: 0;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+	&__description {
+		color: $gray-color;
+		font-family: $lato-font;
+		font-weight: 400;
+		font-size: 13px;
+		text-align: center;
+		line-height: 20px;
+		margin-top: 27px;
+		padding: 0 25px;
+	}
+}
+.preview {
+	background: $blue-main-color;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	height: 200px;
+	cursor: pointer;
+
+	&:hover {
+		.preview__img {
+			opacity: .4;
+		}
+		.preview__zoom {
+			display: block;
+		}
+	}
+	&__zoom {
+		display: none;
+		position: absolute;
+		top: 88px;
+		left: 123px;
+		color: #fff;
+		font-size: 24px;
+		text-shadow: 0 2px 1px rgba(0, 0, 0, .44);
+	}
+	&__title {
+		color: $blue-main-color;
+		font-family: $lato-font;
+		font-weight: 700;
+		font-size: 15px;
+		text-align: center;
+		text-transform: uppercase;
+		background: rgba(65, 64, 66, .65);
+		position: absolute;
+		line-height: 41px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+}
