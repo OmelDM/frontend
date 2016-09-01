@@ -1,0 +1,99 @@
+@import 'variables';
+
+.prices {
+	background: #fff;
+
+	&__container {
+		margin: 60px auto 70px;
+		text-align: center;
+	}
+}
+.price {
+	display: inline-block;
+	width: 300px;
+	background: $light-gray-color;
+	color: $medium-gray-color;
+	border: 1px solid $medium-gray-color;
+	border-radius: 2px;
+	font-family: $lato-font;
+	font-weight: 900;
+	font-size: 18px;
+	vertical-align: middle;
+	margin: 0 15px;
+
+	&:first-of-type {
+		margin-left: 0;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	&_big {
+		width: 370px;
+
+		.price__fetures {
+			color: $blue-color;
+		}
+	}
+
+	&_green {
+		.price__sum, .price__action {
+			background: $green-color;
+		}
+	}
+
+	&_blue {
+		.price__sum, .price__action {
+			background: $blue-color;
+		}
+	}
+
+	&_orange {
+		.price__sum, .price__action {
+			background: $orange-color;
+		}
+	}
+
+	&__title {
+		line-height: 71px;
+		text-transform: uppercase;
+	}
+
+	&__sum {
+		line-height: 115px;
+		font-family: $droid-font;
+		font-weight: 900;
+		font-size: 85px;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+		color: #fff;
+	}
+
+	&__fetures {
+		padding: 5px 0;
+	}
+
+	&__feture {
+		padding: 14px 0;
+	}
+
+	&__action {
+		width: 170px;
+		height: 50px;
+		border: none;
+		color: #fff;
+		font-size: 15px;
+		text-transform: uppercase;
+		border-radius: 2px;
+		margin-bottom: 20px;
+		cursor: pointer;
+
+		&:hover {
+			box-shadow: 1px 2px 1px rgba(0, 0, 0, .3);
+		}
+
+		&:active {
+			box-shadow: 0px 1px 1px rgba(0, 0, 0, .2);
+		}
+	}
+}
