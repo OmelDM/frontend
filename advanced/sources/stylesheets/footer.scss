@@ -1,0 +1,37 @@
+@import 'variables';
+
+$footer-color: #707071;
+
+.footer {
+	background: $dark-gray-color;
+	padding: 50px 0;
+	color: $footer-color;
+	font-family: $lato-font;
+	font-size: 12px;
+
+	&:after {
+		clear: both;
+	}
+
+	&__copyright {
+		display: inline-block;
+		float: left;
+		&_strong {
+			text-transform: uppercase;
+		}
+	}
+
+	&__links {
+		display: inline-block;
+		float: right;
+	}
+
+	&__link {
+		color: $footer-color;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
