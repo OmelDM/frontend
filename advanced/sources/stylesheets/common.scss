@@ -12,6 +12,7 @@ ul {
 }
 button {
 	outline: none;
+	border: none;
 }
 .content {
 	width: $content-width;
@@ -41,4 +42,36 @@ button {
 }
 body {
 	background: #333;
+}
+.download {
+	background: $dark-gray-color;
+	font-family: $lato-font;
+	font-weight: 900;
+	text-align: center;
+
+	&__title {
+		color: #fff;
+		font-size: 55px;
+		text-align: center;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, .36);
+		padding: 50px 0 38px;
+	}
+
+	&__button {
+		color: $dark-gray-color;
+		font-size: 15px;
+		text-transform: uppercase;
+		padding: 25px 32px;
+		background: $blue-main-color;
+		box-shadow: 0 4px 0 #277697;
+		border-radius: 6px;
+		margin-bottom: 35px;
+		cursor: pointer;
+
+		&:hover {
+			// color: #fff;
+			background: lighten($blue-main-color, 10);
+			box-shadow: 0 4px 0 lighten(#277697, 10);
+		}
+	}
 }
