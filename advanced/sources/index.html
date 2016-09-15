@@ -51,36 +51,101 @@
 		</div>
 	</header>
 	<section class="slider">
-		<div class="slider__item">
-			<div class="content">
-			<div class="item__content">
-				
-				<h1 class="item__title">
-					Simple, Beautiful <em>and Amazing</em>
-				</h1>
-				<p class="item__text">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem.
-				</p>
-				<div class="item__buttons">
-					<a class="button" href="#">
-						DOWNLOAD
-					</a>
-					<a class="button" href="#">
-						LEARN MORE
-					</a>
+		<ul>
+			<li>
+				<div class="slider__item">
+					<div class="content">
+						<div class="item__content">
+							<h1 class="item__title">
+								Simple, Beautiful <em>and Amazing</em>
+							</h1>
+							<p class="item__text">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem.
+							</p>
+							<div class="item__buttons">
+								<a class="button" href="#">
+									DOWNLOAD
+								</a>
+								<a class="button" href="#">
+									LEARN MORE
+								</a>
+							</div>
+							<div class="app-icons">
+								Aavailable on :
+								<a class="icon-container" href="#">
+									<i class="fa fa-apple icon" aria-hidden="true"></i>
+								</a>
+								<a class="icon-container" href="#">
+									<i class="fa fa-android icon" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="app-icons">
-					Aavailable on :
-					<a class="icon-container" href="#">
-						<i class="fa fa-apple icon" aria-hidden="true"></i>
-					</a>
-					<a class="icon-container" href="#">
-						<i class="fa fa-android icon" aria-hidden="true"></i>
-					</a>
+			</li>
+			<li>
+				<div class="slider__item">
+					<div class="content">
+						<div class="item__content">
+							<h1 class="item__title">
+								Second <em>and 2</em>
+							</h1>
+							<p class="item__text">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem.
+							</p>
+							<div class="item__buttons">
+								<a class="button" href="#">
+									DOWNLOAD
+								</a>
+								<a class="button" href="#">
+									LEARN MORE
+								</a>
+							</div>
+							<div class="app-icons">
+								Aavailable on :
+								<a class="icon-container" href="#">
+									<i class="fa fa-apple icon" aria-hidden="true"></i>
+								</a>
+								<a class="icon-container" href="#">
+									<i class="fa fa-android icon" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
+			</li>
+			<li>
+				<div class="slider__item">
+					<div class="content">
+						<div class="item__content">
+							<h1 class="item__title">
+								Third <em>and 3</em>
+							</h1>
+							<p class="item__text">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem.
+							</p>
+							<div class="item__buttons">
+								<a class="button" href="#">
+									Third
+								</a>
+								<a class="button" href="#">
+									Third
+								</a>
+							</div>
+							<div class="app-icons">
+								Aavailable on :
+								<a class="icon-container" href="#">
+									<i class="fa fa-apple icon" aria-hidden="true"></i>
+								</a>
+								<a class="icon-container" href="#">
+									<i class="fa fa-android icon" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
+			</li>
+		</ul>
 		<div class="slider__navigation slider__navigation_left">
 			<i class="fa fa-angle-left" aria-hidden="true"></i>
 		</div>
@@ -367,5 +432,30 @@
 	</div>
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/unslider-min.js"></script>
+
+<script>
+	$(function() {
+		const slider = $('.slider').unslider({nav: false});
+
+		$('.slider__navigation_left').click(function () {
+			slider.unslider('prev');
+		});
+
+		$('.slider__navigation_right').click(function () {
+			slider.unslider('next');
+		});
+
+		$('.slider__navigation-dots').on('click', '.slider__navigation-dot', function (event) {
+			slider.unslider('animate:' + $(this).index());
+		});
+
+		slider.on('unslider.change', function (event, index, slide) {
+			$('.slider__navigation-dot_active').removeClass('slider__navigation-dot_active');
+			$('.slider__navigation-dot').eq(index).addClass('slider__navigation-dot_active');
+		});
+	});
+</script>
 </body>
 </html>

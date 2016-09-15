@@ -8,7 +8,8 @@ var gulp = require('gulp'),
 
 var BUILD_DIR = './build/'
 	, HTML_PATH = "./sources/*.html"
-	, STYLESHEETS_PATH = './sources/**/*.scss'
+	, STYLESHEETS_PATHs = ['./sources/**/*.scss', './sources/**/*.css']
+	, JS_PATH = './sources/js/*.js'
 	, IMG_DIR = './sources/i/*'
 	, FONTS_DIR = './sources/fonts/*';
 
@@ -26,11 +27,17 @@ gulp.task('html', function() {
 });
 
 gulp.task('css', function() {
-	return gulp.src(STYLESHEETS_PATH)
+	return gulp.src(STYLESHEETS_PATHs)
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(concat('style.css'))
 		.pipe(gulp.dest(BUILD_DIR))
+		.pipe(connect.reload());
+});
+
+gulp.task('js', function() {
+	return gulp.src(JS_PATH)
+		.pipe(gulp.dest(BUILD_DIR + 'js/'))
 		.pipe(connect.reload());
 });
 
@@ -47,7 +54,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch([HTML_PATH, STYLESHEETS_PATH, IMG_DIR], ['html', 'css', 'img', 'fonts']);
+	gulp.watch([HTML_PATH, JS_PATH, STYLESHEETS_PATHs, IMG_DIR], ['html', 'css', 'js', 'img', 'fonts']);
 });
 
-gulp.task('default', ['html', 'css', 'img', 'fonts', 'connect', 'watch']);
+gulp.task('default', ['html', 'css', 'js', 'img', 'fonts', 'connect', 'watch']);
