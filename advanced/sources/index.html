@@ -362,22 +362,62 @@
 	</h2>
 	<div class="content">
 		<div class="testimonials__container">
-			<div class="testimonial">
-				<div class="testimonial__foto">
-					<img class="testimonial__img" src="i/testimonial_icon.png" alt="">
-				</div>
-				<div class="testimonial__description">
-					<p class="testimonial__text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lobortis lectus eget libero blandit venenatis. In blandit tortor vel congue malesuada. Suspendisse molestie lobortis lorem dignissim pretium.
-					</p>
-					<p class="testimonial__author">
-						John Doe
-					</p>
-					<p class="testimonial__author">
-						from some company
-					</p>
-				</div>
-			</div>
+			<ul>
+				<li>
+					<div class="testimonial">
+						<div class="testimonial__foto">
+							<img class="testimonial__img" src="i/mark.jpg" alt="">
+						</div>
+						<div class="testimonial__description">
+							<p class="testimonial__text">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lobortis lectus eget libero blandit venenatis. In blandit tortor vel congue malesuada. Suspendisse molestie lobortis lorem dignissim pretium.
+							</p>
+							<p class="testimonial__author">
+								Mark Doe
+							</p>
+							<p class="testimonial__author">
+								from Company
+							</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="testimonial">
+						<div class="testimonial__foto">
+							<img class="testimonial__img" src="i/bill.jpg" alt="">
+						</div>
+						<div class="testimonial__description">
+							<p class="testimonial__text">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lobortis lectus eget libero blandit venenatis. In blandit tortor vel congue malesuada. Suspendisse molestie lobortis lorem dignissim pretium.
+							</p>
+							<p class="testimonial__author">
+								Bill Moore
+							</p>
+							<p class="testimonial__author">
+								from Company
+							</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="testimonial">
+						<div class="testimonial__foto">
+							<img class="testimonial__img" src="i/ann.jpg" alt="">
+						</div>
+						<div class="testimonial__description">
+							<p class="testimonial__text">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lobortis lectus eget libero blandit venenatis. In blandit tortor vel congue malesuada. Suspendisse molestie lobortis lorem dignissim pretium.
+							</p>
+							<p class="testimonial__author">
+								Ann Smith
+							</p>
+							<p class="testimonial__author">
+								from Company
+							</p>
+						</div>
+					</div>
+				</li>
+			</ul>
 			<div class="testimonials__nav">
 				<div class="testimonials__nav-item testimonials__nav-item_active"></div>
 				<div class="testimonials__nav-item"></div>
@@ -437,7 +477,12 @@
 
 <script>
 	$(function() {
-		const slider = $('.slider').unslider({nav: false});
+		const slider = $('.slider').unslider({
+			nav: false,
+			arrows: false,
+			autoplay: true,
+			delay: 10000
+		});
 
 		$('.slider__navigation_left').click(function () {
 			slider.unslider('prev');
@@ -454,6 +499,18 @@
 		slider.on('unslider.change', function (event, index, slide) {
 			$('.slider__navigation-dot_active').removeClass('slider__navigation-dot_active');
 			$('.slider__navigation-dot').eq(index).addClass('slider__navigation-dot_active');
+		});
+
+		const testimonials = $('.testimonials__container').unslider({
+			nav: false,
+			arrows: false,
+			autoplay: true,
+			delay: 4000
+		});
+
+		testimonials.on('unslider.change', function (event, index, slide) {
+			$('.testimonials__nav-item_active').removeClass('testimonials__nav-item_active');
+			$('.testimonials__nav-item').eq(index).addClass('testimonials__nav-item_active');
 		});
 	});
 </script>
