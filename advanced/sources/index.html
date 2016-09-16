@@ -8,6 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<!-- TOP button -->
+<button class="button-top button-top_hidden">
+	<i class="fa fa-arrow-up" aria-hidden="true"></i>
+</button>
 
 <!-- HEADER -->
 <header class="header content content_full">
@@ -27,25 +31,25 @@
 						<a class="navigation__link navigation__link_selected" href="">Home</a>
 					</li>
 					<li class="navigation__list-item">
-						<a class="navigation__link" href="">Features</a>
+						<a class="navigation__link" href="#features">Features</a>
 					</li>
 					<li class="navigation__list-item">
-						<a class="navigation__link" href="">Gallery</a>
+						<a class="navigation__link" href="#gallery">Gallery</a>
 					</li>
 					<li class="navigation__list-item">
-						<a class="navigation__link" href="">Video</a>
+						<a class="navigation__link" href="#video">Video</a>
 					</li>
 					<li class="navigation__list-item">
-						<a class="navigation__link" href="">Prices</a>
+						<a class="navigation__link" href="#prices">Prices</a>
 					</li>
 					<li class="navigation__list-item">
-						<a class="navigation__link" href="">Testimonials</a>
+						<a class="navigation__link" href="#testimonials">Testimonials</a>
 					</li>
 					<li class="navigation__list-item">
-						<a class="navigation__link" href="">Download</a>
+						<a class="navigation__link" href="#download">Download</a>
 					</li>
 					<li class="navigation__list-item">
-						<a class="navigation__link" href="">Contact</a>
+						<a class="navigation__link" href="#contact">Contact</a>
 					</li>
 				</ul>
 			</nav>
@@ -165,7 +169,7 @@
 </header>
 
 <!-- FEATURES -->
-<section class="features content content_full">
+<section class="features content content_full" id="features">
 	<div class="content">
 		<h2 class="content__title">
 			summarise the features
@@ -218,7 +222,7 @@
 </section>
 
 <!-- GALLERY -->
-<section class="gallery content content_full">
+<section class="gallery content content_full" id="gallery">
 	<div class="content">
 		<h2 class="content__title">
 			show the gallery
@@ -285,7 +289,7 @@
 </section>
 
 <!-- VIDEO -->
-<section class="video content content_full">
+<section class="video content content_full" id="video">
 	<div class="content">
 		<div class="video__play">
 			<i class="fa fa-play" aria-hidden="true"></i>
@@ -300,7 +304,7 @@
 </section>
 
 <!-- PRICES -->
-<section class="prices content content_full">
+<section class="prices content content_full" id="prices">
 	<div class="content">
 		<h2 class="content__title">
 			choose your price
@@ -357,7 +361,7 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials content content_full">
+<section class="testimonials content content_full" id="testimonials">
 	<h2 class="content__title">
 		testimonials
 	</h2>
@@ -429,7 +433,7 @@
 </section>
 
 <!-- DOWNLOAD -->
-<section class="download content content_full">
+<section class="download content content_full" id="download">
 	<div class="content">
 		<h2 class="download__title">
 			Do you Like this app?
@@ -441,7 +445,7 @@
 </section>
 
 <!-- CONTACT -->
-<section class="contact content content_full">
+<section class="contact content content_full" id="contact">
 	<div class="content">
 		<form class="contact__container">
 			<h4 class="contact__title">
@@ -478,6 +482,31 @@
 
 <script>
 	$(function() {
+
+		// NAVIGTION SCROLLING
+		$('a[href*="#"]:not([href="#"])').click(function () {
+			var target = $(this).attr('href');
+			var destination = $(target).offset().top;
+			$('html, body').animate({scrollTop: destination}, 1000);
+		});
+
+		$('.button-top').click(function () {
+			$('html, body').animate({scrollTop: 0}, 1000);
+		});
+
+		$(window).on('scroll', function () {
+			if (100 < $(window).scrollTop()) {
+				$('.button-top_hidden').removeClass('button-top_hidden');
+			} else if (!$('.button-top').hasClass('button-top_hidden')) {
+				$('.button-top').addClass('button-top_hidden');
+			}
+		});
+
+		if (100 < $(window).scrollTop()) {
+			$('.button-top_hidden').removeClass('button-top_hidden');
+		}
+
+		// MAIN SLIDER
 		const slider = $('.slider').unslider({
 			nav: false,
 			arrows: false,
@@ -502,6 +531,7 @@
 			$('.slider__navigation-dot').eq(index).addClass('slider__navigation-dot_active');
 		});
 
+		// TESTIMONIALS SLIDER
 		const testimonials = $('.testimonials__container').unslider({
 			nav: false,
 			arrows: false,
